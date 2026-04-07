@@ -11,7 +11,8 @@
     "build:pro": "vue-tsc && vite build --mode production",
     "lint": "eslint src",
     "fix": "eslint src --fix",
-    "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\""
+    "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\"",
+    "prepare": "husky"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.2",
@@ -37,6 +38,7 @@
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-vue": "^10.8.0",
     "fast-glob": "^3.3.3",
+    "husky": "^9.1.7",
     "mockjs": "^1.1.0",
     "prettier": "^3.8.1",
     "sass": "^1.98.0",
