@@ -1,0 +1,37 @@
+//为项目提供全局变量
+//定义项目主题颜色
+
+
+//左侧菜单宽度
+$base-menu-width:260px;
+
+//左侧菜单背景颜色
+$base-menu-background:#001529;
+
+$base-menu-min-width:50px;
+
+//顶部导航的高度
+$base-tabbar-height:60px;
+
+
+//定义左边菜单logo高度
+$base-menu-logo-height:50px;
+
+//定义左边菜单标题字体大小
+$base-menu-title-fontSize:20px;
+
+//主要内容区颜色
+$base-main-background: #c8b89a;
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #7aab8a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9b59b6;
+    border-radius: 12px;
+}
