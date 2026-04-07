@@ -31,8 +31,3 @@ app.use(router)
 //引入路由鉴权文件
 import './permission'
 app.mount('#app')
-
-const fun = () => {
-  console.log('没有格式化')
-}
-fun()
