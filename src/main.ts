@@ -32,8 +32,7 @@ app.use(router)
 import './permission'
 app.mount('#app')
 
-const fun = ()=> 
-  {
-  console.log('没有格式化');
+const fun = () => {
+  console.log('没有格式化')
 }
-fun();
+fun()
