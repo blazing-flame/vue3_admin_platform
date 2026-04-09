@@ -1,3 +1,4 @@
+//对外暴露配置路由(常量路由):全部用户都可以访问到的路由
 export const constantRoute = [
   {
     path: '/login',
@@ -51,6 +52,10 @@ export const constantRoute = [
       icon: 'Platform',
     },
   },
+]
+
+//异步路由
+export const asyncRoute = [
   {
     path: '/acl',
     component: () => import('@/layout/index.vue'),
@@ -147,6 +152,10 @@ export const constantRoute = [
       },
     ],
   },
+]
+
+//任意路由
+export const anyRoute = [
   {
     //兜底路由，用来处理用户访问不存在的页面
     path: '/:pathMatch(.*)*',

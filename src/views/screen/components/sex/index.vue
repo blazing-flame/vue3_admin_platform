@@ -87,7 +87,6 @@ onMounted(() => {
   background-size: 100% 100%;
   margin: 20px 0;
   .title {
-    margin-left: 20px;
     p {
       color: white;
       font-size: 25px;

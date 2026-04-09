@@ -3,16 +3,25 @@
     <!-- 数据大屏展示内容区 -->
     <div class="screen" ref="screen">
       <!-- 数据大屏顶部 -->
-      <Top />
-      <!-- 数据大屏左侧 -->
+      <div class="top">
+        <Top />
+      </div>
       <div class="bottom">
+        <!-- 数据大屏左侧 -->
         <div class="left">
           <Tourist class="tourist"></Tourist>
           <Sex class="sex"></Sex>
           <Age class="age"></Age>
         </div>
-        <div class="center"></div>
-        <div class="right"></div>
+        <div class="center">
+          <Map class="map" />
+          <Line class="line" />
+        </div>
+        <div class="right">
+          <Rank class="rank" />
+          <Year class="year" />
+          <Counter class="counter" />
+        </div>
       </div>
     </div>
   </div>
@@ -26,6 +35,13 @@ import Top from './components/top/index.vue'
 import Tourist from './components/tourist/index.vue'
 import Sex from './components/sex/index.vue'
 import Age from './components/age/index.vue'
+//引入中间两个子组件
+import Map from './components/map/index.vue'
+import Line from './components/line/index.vue'
+//引入右侧三个子组件
+import Rank from './components/rank/index.vue'
+import Year from './components/year/index.vue'
+import Counter from './components/counter/index.vue'
 //获取数据大屏展示内容的盒子的DOM元素
 const screen = ref()
 onMounted(() => {
@@ -56,6 +72,10 @@ window.onresize = () => {
     transform-origin: left top;
     left: 50%;
     top: 50%;
+    .top {
+      width: 100%;
+      height: 40px;
+    }
     .bottom {
       display: flex;
       .left {
@@ -63,6 +83,7 @@ window.onresize = () => {
         height: 1040px;
         display: flex;
         flex-direction: column;
+        margin-right: 40px;
         .tourist {
           flex: 1.2;
         }
@@ -75,9 +96,29 @@ window.onresize = () => {
       }
       .center {
         flex: 2;
+        display: flex;
+        flex-direction: column;
+        .map {
+          flex: 3;
+        }
+        .line {
+          flex: 1;
+        }
       }
       .right {
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-left: 40px;
+        .rank {
+          flex: 1.2;
+        }
+        .year {
+          flex: 1;
+        }
+        .counter {
+          flex: 1;
+        }
       }
     }
   }

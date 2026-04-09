@@ -8,7 +8,6 @@ import pinia from './store'
 import useUserStore from './store/modules/user'
 import setting from './setting'
 const userStore = useUserStore(pinia)
-const username = userStore.username
 
 //全局守卫：项目当中任意路由切换都会触发的钩子
 //全局前置守卫
@@ -24,6 +23,7 @@ router.beforeEach(async (to, from) => {
     if (to.path == '/login') {
       return '/'
     } else {
+      const username = userStore.username
       //登录成功访问其余6个路由(登录排除)
       //有用户信息
       if (username) {
@@ -32,7 +32,9 @@ router.beforeEach(async (to, from) => {
         //如果没有用户信息，在守卫这里发请求获取到了用户信息再放行
         try {
           await userStore.userInfo()
-          return true
+          //放行
+          //万一：刷新时候是异步路由，有可能获取到用户信息，异步路由还没有加载完毕，出现空白页面
+          return { ...to }
         } catch (error) {
           //token过期：获取不到用户信息了
           //用户手动修改本地存储token

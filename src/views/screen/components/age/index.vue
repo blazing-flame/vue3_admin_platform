@@ -13,10 +13,10 @@
 import * as echarts from 'echarts'
 import { ref, onMounted } from 'vue'
 //获取div的DOM元素节点
-const charts = ref()
+let charts = ref()
 onMounted(() => {
   //获取echarts类的实例
-  const mycharts = echarts.init(charts.value)
+  let mycharts = echarts.init(charts.value)
   //设置配置项
   const option = {
     tooltip: {
@@ -35,8 +35,8 @@ onMounted(() => {
       {
         name: 'Access From',
         type: 'pie',
-        radius: ['40%', '70%'],
-        center: ['30%', '45%'],
+        radius: ['40%', '80%'],
+        center: ['40%', '55%'],
         avoidLabelOverlap: false,
         itemStyle: {
           borderRadius: 10,
@@ -82,8 +82,8 @@ onMounted(() => {
   height: 100%;
   background: url(../../images/dataScreen-main-cb.png) no-repeat;
   background-size: 100% 100%;
+  margin-bottom: 70px;
   .title {
-    margin-left: 20px;
     p {
       color: white;
       font-size: 25px;

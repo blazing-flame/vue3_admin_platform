@@ -102,8 +102,8 @@ const setColor = () => {
   html.style.setProperty('--el-color-warning', color.value) // warning 橙色
   html.style.setProperty('--el-color-danger', color.value) // danger 红色
   html.style.setProperty('--el-color-info', color.value) // info 灰色
-  // 存起来
-  localStorage.setItem('themeColor', color.value)
+  // 本地存起来
+  // localStorage.setItem('themeColor', color.value)
 }
 </script>
 
