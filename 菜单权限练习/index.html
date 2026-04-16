@@ -182,7 +182,8 @@
     return asyncRoute.filter((item) => {
       if (routes.includes(item.name)) {
         if (item.children) {
-          item.children = filterAsyncRoute(item.children, routes)
+          // item.children = filterAsyncRoute(item.children, routes) // 不要直接修改原对象
+          item.children = filterAsyncRoute(JSON.parse(JSON.stringify(item.children)), routes) // 使用副本去替代
         }
         return true
       }
